@@ -14,9 +14,3 @@
     git commit -m 'init commit'\
     git push origin feature/init-env
 8. create a PR and merge
-9. git checkout -b feature/spring-boot-rest-endpoint
-10. add code needed ...
-11. git add .\
-    git status\
-    git commit -m 'SpringBoot REST endpoint'\
-    git push origin feature/spring-boot-rest-endpoint\
