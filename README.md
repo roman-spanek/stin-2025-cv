@@ -14,3 +14,13 @@
     git commit -m 'init commit'\
     git push origin feature/init-env
 8. create a PR and merge
+9. git checkout -b feature/spring-boot-rest-endpoint
+10. https://start.spring.io/
+11. place zip in project folder
+12. unzip to root folder of project
+13. open in IDE
+14. git add .\
+    git status\
+    git commit -m 'SpringBoot REST endpoint'\
+    git push origin feature/spring-boot-rest-endpoint\
+14. or do commit nad push in IDE
