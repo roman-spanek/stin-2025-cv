@@ -1,5 +1,10 @@
 # stin-2025-cv
 
+##CV03 REST activation
+
+
+curl -X POST http://localhost:8081/api/command/switchOn -H "Content-Type: application/json"  -d '{"controlName": "window"}'
+
 ##CV01 - SpringBoot REST endpoint
 
 
