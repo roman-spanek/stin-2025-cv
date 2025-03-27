@@ -33,7 +33,8 @@ jobs:
       run: mvn test jacoco:report
 
     - name: Create badges directory
-      run: mkdir -p .github/badges
+      run: |
+          mkdir .github/badges
       
     - name: Upload JaCoCo report
       uses: actions/upload-artifact@v4
@@ -47,4 +48,4 @@ jobs:
         generate-branches-badge: true
 
     - name: Run custom bash script
-      run: bash resources/bash/bash-script.sh
+      run: bash src/main/resources/bash/bash-script.sh
