@@ -1,5 +1,3 @@
-![Coverage](.github/badges/jacoco.svg)
-
 # stin-2025-cv
 
 ##CV03 REST activation
