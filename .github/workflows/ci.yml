@@ -37,3 +37,8 @@ jobs:
       with:
         name: jacoco-report
         path: target/site/jacoco
+
+    - name: Generate JaCoCo Badge
+      uses: cicirello/jacoco-badge-generator@v2
+      with:
+        generate-branches-badge: true
