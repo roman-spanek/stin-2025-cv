@@ -22,6 +22,7 @@ public class CommandController {
         commandHandler.switchOff(commandEntity);
     }
 
+
     @PostMapping("/undo")
     public void undo() {
         commandHandler.undo();
