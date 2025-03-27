@@ -1,3 +1,5 @@
+[![Coverage](.github/badges/jacoco.svg)](https://github.com/roman-spanek/stin-2025-cv/actions/workflows/build.yml)
+
 # stin-2025-cv
 
 ##CV03 REST activation
