@@ -32,9 +32,14 @@ public class CommandHandlerTest {
 
     @Test
     public void testSwitchOn() {
+        //set
+
+        //act
         commandHandler.switchOn(commandEntity);
+        //verify
         verify(mockCommand, times(1)).switchOn(commandEntity);
         assertEquals(1, commandHandler.getCommandHistory().getHistory().size());
+        assertEquals(commandEntity, commandHandler.getCommandHistory().getHistory().pop());
     }
 
     @Test
