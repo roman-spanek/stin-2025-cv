@@ -45,3 +45,6 @@ jobs:
       uses: cicirello/jacoco-badge-generator@v2
       with:
         generate-branches-badge: true
+
+    - name: Run custom bash script
+      run: bash resources/bash/bash-script.sh
