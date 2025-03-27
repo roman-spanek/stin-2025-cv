@@ -1,4 +1,4 @@
-[![Coverage](.github/badges/jacoco.svg)](https://github.com/roman-spanek/stin-2025-cv/actions/workflows/build.yml)
+[![Coverage](.github/badges/jacoco.svg)](https://github.com/roman-spanek/stin-2025-cv/actions/workflows/ci.yml)
 
 # stin-2025-cv
 
