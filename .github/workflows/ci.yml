@@ -32,6 +32,9 @@ jobs:
     - name: Run tests with JaCoCo
       run: mvn test jacoco:report
 
+    - name: Create badges directory
+      run: mkdir -p .github/badges
+      
     - name: Upload JaCoCo report
       uses: actions/upload-artifact@v4
       with:
