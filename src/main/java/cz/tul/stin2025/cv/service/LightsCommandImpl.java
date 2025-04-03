@@ -11,9 +11,13 @@ import org.springframework.stereotype.Service;
 public class LightsCommandImpl implements Command{
     @Override
     public void switchOn(CommandEntity commandEntity) {
+        if (commandEntity == null) {
+            log.error("CommandEntity is null.");
+            throw new ControllerException("CommandEntity is null.");
+        }
         if (commandEntity.getControlName().equals("light")) { //?
             commandEntity.setStatus(ControllerStatus.ON);
-            log.info("Light is {}", ControllerStatus.ON);
+        log.info("Light is {}", ControllerStatus.ON);
         } else {
             //vs 1
             //notSupported(commandEntity);
@@ -21,6 +25,7 @@ public class LightsCommandImpl implements Command{
             log.error(" {} is not supported.", commandEntity.getControlName());
             throw new ControllerException(commandEntity.getControlName() + " is not supported.");
         }
+
     }
 
     @Override
@@ -30,10 +35,8 @@ public class LightsCommandImpl implements Command{
             log.info("Light is {}", ControllerStatus.OFF);
         } else {
             //vs 1
-            //notSupported(commandEntity);
-            // vs 2
-            log.error(" {} is not supported.", commandEntity.getControlName());
-            throw new ControllerException(commandEntity.getControlName() + " is not supported.");
+            notSupported(commandEntity);
+
         }
     }
 

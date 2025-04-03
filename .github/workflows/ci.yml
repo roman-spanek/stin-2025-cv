@@ -15,6 +15,7 @@ jobs:
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
+        distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '17'
 
     - name: Cache Maven packages
@@ -31,8 +32,20 @@ jobs:
     - name: Run tests with JaCoCo
       run: mvn test jacoco:report
 
+    - name: Create badges directory
+      run: |
+          mkdir .github/badges
+      
     - name: Upload JaCoCo report
       uses: actions/upload-artifact@v4
       with:
         name: jacoco-report
         path: target/site/jacoco
+
+    - name: Generate JaCoCo Badge
+      uses: cicirello/jacoco-badge-generator@v2
+      with:
+        generate-branches-badge: true
+
+    - name: Run custom bash script
+      run: bash src/main/resources/bash/bash-script.sh
