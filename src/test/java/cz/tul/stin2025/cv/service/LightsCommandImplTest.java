@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class LightsCommandImplTest {
 
     private LightsCommandImpl lightsCommand;
-    private CommandEntity commandEntity;
 
     @BeforeEach
     void setUp() {
@@ -29,7 +28,6 @@ class LightsCommandImplTest {
         //assert
         assertEquals(ControllerStatus.ON, commandEntity.getStatus());
     }
-
     @Test
     void switchOnNonLightControlNameShouldThrowException() {
         //set
@@ -42,6 +40,18 @@ class LightsCommandImplTest {
         });
         //assert
         assertEquals("fan is not supported.", exception.getMessage());
+    }
+
+    @Test
+    void switchOnExceptionLightControlNameShouldThrowException() {
+        //set
+        CommandEntity commandEntity = null;
+        //act
+        ControllerException exception = assertThrows(ControllerException.class, () -> {
+            lightsCommand.switchOn(commandEntity);
+        });
+        //assert
+        assertEquals("CommandEntity is null.", exception.getMessage());
     }
 
 }
