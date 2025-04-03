@@ -20,10 +20,10 @@ public class LightsCommandImpl implements Command{
         log.info("Light is {}", ControllerStatus.ON);
         } else {
             //vs 1
-            //notSupported(commandEntity);
+            notSupported(commandEntity);
             // vs 2
-            log.error(" {} is not supported.", commandEntity.getControlName());
-            throw new ControllerException(commandEntity.getControlName() + " is not supported.");
+            //log.error(" {} is not supported.", commandEntity.getControlName());
+            //throw new ControllerException(commandEntity.getControlName() + " is not supported.");
         }
 
     }
@@ -35,13 +35,18 @@ public class LightsCommandImpl implements Command{
             log.info("Light is {}", ControllerStatus.OFF);
         } else {
             //vs 1
+            commandEntity = new CommandEntity();
             notSupported(commandEntity);
-
         }
     }
 
     private void notSupported (CommandEntity commandEntity) {
+        if (commandEntity == null) {
+            log.error("CommandEntity is null.");
+            throw new ControllerException("CommandEntity is null.");
+        }
         log.error(" {} is not supported.", commandEntity.getControlName());
         throw new ControllerException(commandEntity.getControlName() + " is not supported.");
     }
+
 }
